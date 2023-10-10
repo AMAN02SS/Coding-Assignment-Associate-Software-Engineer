@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descending Array Sort</title>
+</head>
+<body>
+    <h1>Descending Array Sort</h1>
+    <label for="inputArray">Enter array elements (space-separated):</label>
+    <input type="text" id="inputArray" placeholder="Enter array...">
+    <button onclick="sortDescending()">Sort Descending</button>
+    <p>Sorted Array (Descending): <span id="output"></span></p>
+
+    <script>
+        function sortDescending() {
+            const inputArray = document.getElementById('inputArray').value;
+            const array = inputArray.split(" ").map(item => parseInt(item.trim()));
+            
+            if (array.length > 0) {
+                array.sort((a, b) => b - a); // Sorting in descending order
+                document.getElementById('output').textContent = array.join(" ");
+            } else {
+                document.getElementById('output').textContent = 'Please enter valid array elements.';
+            }
+        }
+    </script>
+</body>
+</html>
